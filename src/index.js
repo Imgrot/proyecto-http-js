@@ -1,7 +1,11 @@
-import { saludar } from './js/componentes.js';
-import './styles.css';
 
+const jokeUrl = 'https://api.chucknorris.io/jokes/random';
+fetch(jokeUrl)
+    .then(response => {
 
-const nombre = 'Fernando';
-
-saludar( nombre );
+        response.json()
+            .then(({id, value}) => {
+                console.log(id);
+                console.log(value);
+            })
+    });
